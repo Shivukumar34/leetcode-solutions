@@ -3,9 +3,12 @@ class Solution {
         if(nums.length==0){
             return 0;
         }
-        int j=1;
-        for ( int i=1; i<nums.length ; i++){
-            if (nums[i]!=nums[i-1]){
+        HashSet <Integer>s = new HashSet <>();
+
+        int j=0;
+        for ( int i=0; i<nums.length ; i++){
+            if (!s.contains(nums[i])){
+                s.add(nums[i]);
                 nums[j]=nums[i];
                 j++;
             }
